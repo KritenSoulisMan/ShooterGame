@@ -1,14 +1,11 @@
 using System;
 using System.IO;
-using System.Security.Cryptography;
-using System.Text;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
     private static string savePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "NameGame", "playerData.dat");
     private static string saveDirectory = Path.GetDirectoryName(savePath);
-    private static string encryptionKey = "YourEncryptionKey123"; // Выберите надёжный ключ
 
     // Проверка наличия файла сохранения
     public static void CheckOrCreateSaveFile()
@@ -43,9 +40,8 @@ public class SaveManager : MonoBehaviour
         // Объединяем данные в строку для сохранения
         string data = $"{playerName}|{playerKills}|{playerDeaths}";
 
-        // Шифруем данные и сохраняем в файл
-        string encryptedData = EncryptData(data);
-        File.WriteAllText(savePath, encryptedData);
+        // Сохраняем данные в файл
+        File.WriteAllText(savePath, data);
         Debug.Log("Данные игрока успешно сохранены.");
     }
 
@@ -54,8 +50,7 @@ public class SaveManager : MonoBehaviour
     {
         if (File.Exists(savePath))
         {
-            string encryptedData = File.ReadAllText(savePath);
-            string data = DecryptData(encryptedData);
+            string data = File.ReadAllText(savePath);
 
             // Разделяем данные и сохраняем в PlayerPrefs
             string[] parts = data.Split('|');
@@ -70,48 +65,6 @@ public class SaveManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Файл сохранения не найден.");
-        }
-    }
-
-    // Шифрование данных
-    private static string EncryptData(string data)
-    {
-        byte[] keyBytes = Encoding.UTF8.GetBytes(encryptionKey);
-        byte[] iv = new byte[16];
-        byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-
-        using (Aes aes = Aes.Create())
-        {
-            aes.Key = keyBytes;
-            aes.IV = iv;
-            using (MemoryStream ms = new MemoryStream())
-            using (CryptoStream cs = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write))
-            {
-                cs.Write(dataBytes, 0, dataBytes.Length);
-                cs.FlushFinalBlock();
-                return Convert.ToBase64String(ms.ToArray());
-            }
-        }
-    }
-
-    // Дешифрование данных
-    private static string DecryptData(string encryptedData)
-    {
-        byte[] keyBytes = Encoding.UTF8.GetBytes(encryptionKey);
-        byte[] iv = new byte[16];
-        byte[] encryptedBytes = Convert.FromBase64String(encryptedData);
-
-        using (Aes aes = Aes.Create())
-        {
-            aes.Key = keyBytes;
-            aes.IV = iv;
-            using (MemoryStream ms = new MemoryStream())
-            using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Write))
-            {
-                cs.Write(encryptedBytes, 0, encryptedBytes.Length);
-                cs.FlushFinalBlock();
-                return Encoding.UTF8.GetString(ms.ToArray());
-            }
         }
     }
 }

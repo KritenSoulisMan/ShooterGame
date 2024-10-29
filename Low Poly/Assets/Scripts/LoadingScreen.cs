@@ -1,77 +1,84 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using Photon.Pun.Demo.PunBasics;
 
 public class LoadingScreen : MonoBehaviour
 {
-    public Slider progressBar;          // Полоска прогресса
-    public TMP_Text progressText;       // Проценты загрузки
-    public Text loadingText;            // Текст на загрузачном экране
+    public Slider progressBar;
+    public TMP_Text progressText;
+    public TMP_Text loadingText;
+    public TMP_Text continueText;
 
-    void Start()
+    private void Start()
     {
         loadingText.text = "Проверка и создание файлов сохранения...";
         SaveManager.CheckOrCreateSaveFile();
         SaveManager.LoadPlayerData();
 
-        // Если данные отсутствуют, отправляем на регистрацию
+        // Скрываем вторую надпись до завершения загрузки
+        continueText.gameObject.SetActive(false);
+
         if (string.IsNullOrEmpty(PlayerPrefs.GetString("PlayerName", "")))
         {
             loadingText.text = "Перенаправление на регистрацию...";
-            SceneManager.LoadScene("Registrate");
+            StartCoroutine(LoadSceneAsync("Registrate"));
         }
         else
         {
             loadingText.text = "Загрузка завершена. Переход в игру...";
-            SceneManager.LoadScene("lvl_2");
-        }
-
-        /// Можно и его использовать, но выше будет по надёжней ///
-        /*
-        // Проверка на существование никнейма
-        if (PlayerPrefs.HasKey("PlayerNickname"))
-        {
-            // Переход к основному меню
             StartCoroutine(LoadSceneAsync("lvl_2"));
         }
-        else
-        {
-            // Переход к сцене ввода никнейма
-            StartCoroutine(LoadSceneAsync("Registrate"));
-        }
-        */
     }
 
     IEnumerator LoadSceneAsync(string sceneName)
     {
-        // Запускаем асинхронную загрузку
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-
-        // Отключаем автоматическую активацию, чтобы мы могли управлять ею вручную
         operation.allowSceneActivation = false;
 
-        // Пока сцена загружается, обновляем прогресс
+        float targetProgress = 0f;
+        float displayedProgress = 0f;
+
         while (!operation.isDone)
         {
-            // Прогресс (делим на 0.9, так как сцена загружается только до 90%)
-            float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            progressBar.value = progress;  // Обновляем полоску прогресса
-            progressText.text = (progress * 100).ToString("F0") + "%";  // Обновляем проценты
+            // Определение реального прогресса загрузки, доходящего до 0.9
+            targetProgress = operation.progress < 0.9f ? operation.progress : 1f;
 
-            // Когда прогресс достиг 90%, разрешаем активацию сцены
-            if (operation.progress >= 0.9f)
+            // Плавное и рывковое изменение прогресса
+            float speed = Random.Range(0.05f, 4.5f);
+            displayedProgress = Mathf.MoveTowards(displayedProgress, targetProgress, speed * Time.deltaTime);
+            progressBar.value = displayedProgress;
+            progressText.text = (displayedProgress * 100).ToString("F0") + "%";
+
+            // Добавление пауз для эффекта рывков
+            if (Random.Range(0, 3) == 0)
+                yield return new WaitForSeconds(Random.Range(0.1f, 0.3f));
+
+            // Когда загрузка завершена
+            if (displayedProgress >= 1f && targetProgress >= 1f)
             {
-                progressText.text = "Нажмите любую клавишу для продолжения...";
+                // Отключаем прогресс и включаем текст "Нажмите любую клавишу для продолжения"
+                progressText.gameObject.SetActive(false);
+                continueText.gameObject.SetActive(true);
+                StartCoroutine(BlinkText()); // Запускаем мигание текста
+
                 if (Input.anyKeyDown)
                 {
                     operation.allowSceneActivation = true;
                 }
             }
 
+            yield return null;
+        }
+    }
+
+    // Корутина для мигания текста "Нажмите любую клавишу для продолжения..."
+    IEnumerator BlinkText()
+    {
+        while (true)
+        {
+            continueText.alpha = Mathf.PingPong(Time.time * 1.5f, 1);
             yield return null;
         }
     }

@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\seqjo\\Desktop\\Low Poly\\",
+  "WorkspaceRootPath": "C:\\Users\\seqjo\\Desktop\\GitHub-repos\\ShooterGame\\Low Poly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F11B9270-66A0-83D2-6B99-A3C516FAB77B}|Assembly-CSharp.csproj|c:\\users\\seqjo\\desktop\\low poly\\assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F11B9270-66A0-83D2-6B99-A3C516FAB77B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F11B9270-66A0-83D2-6B99-A3C516FAB77B}|Assembly-CSharp.csproj|c:\\users\\seqjo\\desktop\\github-repos\\shootergame\\low poly\\assets\\scripts\\loadingscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F11B9270-66A0-83D2-6B99-A3C516FAB77B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loadingscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "C:\\Users\\seqjo\\Desktop\\Low Poly\\Assets\\Scripts\\PlayerMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
-              "ToolTip": "C:\\Users\\seqjo\\Desktop\\Low Poly\\Assets\\Scripts\\PlayerMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA1wCMAAAAAAAAAAAAAAA==",
+              "Title": "LoadingScreen.cs",
+              "DocumentMoniker": "C:\\Users\\seqjo\\Desktop\\GitHub-repos\\ShooterGame\\Low Poly\\Assets\\Scripts\\LoadingScreen.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoadingScreen.cs",
+              "ToolTip": "C:\\Users\\seqjo\\Desktop\\GitHub-repos\\ShooterGame\\Low Poly\\Assets\\Scripts\\LoadingScreen.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoadingScreen.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T23:11:57.191Z",
+              "WhenOpened": "2024-10-29T17:21:34.284Z",
               "EditorCaption": ""
             }
           ]

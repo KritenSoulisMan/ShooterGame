@@ -3,11 +3,13 @@ using TMPro;
 
 public class PlayerProfile : MonoBehaviour
 {
-    public TextMeshProUGUI nicknameText;
-    public TextMeshProUGUI killsText;
-    public TextMeshProUGUI deathsText;
-    public TextMeshProUGUI levelText;
-    public TextMeshProUGUI timePlayedText;
+    public TMP_Text nicknameText;
+    public TMP_Text secondNicknameText;
+    public TMP_Text killsText;
+    public TMP_Text deathsText;
+    public TMP_Text levelText;
+    public TMP_Text secondLevelText;
+    public TMP_Text timePlayedText;
 
     private void Start()
     {
@@ -25,10 +27,12 @@ public class PlayerProfile : MonoBehaviour
 
         // Обновляем UI с профилем игрока
         nicknameText.text = nickname;
+        secondNicknameText.text = nickname;
         killsText.text = "Убийства: " + kills;
         deathsText.text = "Смерти: " + deaths;
         levelText.text = "" + level;
-        timePlayedText.text = $"Время в игре: {Mathf.Floor(timePlayed)}ч.";
+        secondLevelText.text = "" + level;
+        timePlayedText.text = $"Время в игре: {Mathf.Floor(timePlayed / 60f * 10f) / 10f}ч.";
     }
 
     public void UpdateTimePlayed(float deltaTime)
@@ -56,6 +60,6 @@ public class PlayerProfile : MonoBehaviour
     public void UpdateLevel(int newLevel)
     {
         PlayerPrefs.SetInt("PlayerLevel", newLevel);
-        levelText.text = "Уровень: " + newLevel;
+        levelText.text = "" + newLevel;
     }
 }
