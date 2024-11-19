@@ -46,7 +46,7 @@ public class LoadingScreen : MonoBehaviour
             targetProgress = operation.progress < 0.9f ? operation.progress : 1f;
 
             // Плавное и рывковое изменение прогресса
-            float speed = Random.Range(0.05f, 4.5f);
+            float speed = Random.Range(1.05f, 4.5f);
             displayedProgress = Mathf.MoveTowards(displayedProgress, targetProgress, speed * Time.deltaTime);
             progressBar.value = displayedProgress;
             progressText.text = (displayedProgress * 100).ToString("F0") + "%";
@@ -58,12 +58,13 @@ public class LoadingScreen : MonoBehaviour
             // Когда загрузка завершена
             if (displayedProgress >= 1f && targetProgress >= 1f)
             {
+                // Debug.Log("Брух клавишу нажал?");
                 // Отключаем прогресс и включаем текст "Нажмите любую клавишу для продолжения"
                 progressText.gameObject.SetActive(false);
                 continueText.gameObject.SetActive(true);
                 StartCoroutine(BlinkText()); // Запускаем мигание текста
 
-                if (Input.anyKeyDown)
+                if (Input.anyKey)
                 {
                     operation.allowSceneActivation = true;
                 }

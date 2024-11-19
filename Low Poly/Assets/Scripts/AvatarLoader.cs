@@ -2,15 +2,18 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+#if UNITY_STANDALONE_WIN
+using System.Windows.Forms;
+#endif
 
 public class AvatarLoader : MonoBehaviour
 {
-    public Button avatarButton;            // Кнопка для загрузки аватарки
-    public Image avatarImage;              // Основное изображение аватарки
-    public Image secondaryAvatarImage;     // Второе изображение, которое тоже нужно обновить
-    public TMP_Text errorText;             // Текст для ошибок (например, если файл слишком большой или неверного формата)
+    public UnityEngine.UI.Button avatarButton;            // Кнопка для загрузки аватарки
+    public Image avatarImage;                             // Основное изображение аватарки
+    public Image secondaryAvatarImage;                    // Второе изображение, которое тоже нужно обновить
+    public TMP_Text errorText;                            // Текст для ошибок (например, если файл слишком большой или неверного формата)
 
-    private const int maxFileSize = 1048576; // 1 MB в байтах
+    private const int maxFileSize = 1048576;              // 1 MB в байтах
     private string savePath;
 
     void Start()
@@ -33,12 +36,17 @@ public class AvatarLoader : MonoBehaviour
 
     private void OpenFileExplorer()
     {
-        string path = UnityEditor.EditorUtility.OpenFilePanel("Выберите изображение", "", "png,gif");
-
-        if (!string.IsNullOrEmpty(path))
+#if UNITY_STANDALONE_WIN
+        OpenFileDialog dialog = new OpenFileDialog();
+        dialog.Filter = "Файл картинки (*.png;*.gif)|*.png;*.gif";
+        if (dialog.ShowDialog() == DialogResult.OK)
         {
-            LoadAvatar(path);
+            LoadAvatar(dialog.FileName);
         }
+#else
+        errortext.text = "Выбор аватара доступен только на Windows в исполняемом режиме.";
+        Debug.LogWarning("Выбор аватара доступен только на Windows.");
+#endif
     }
 
     private void LoadAvatar(string path)

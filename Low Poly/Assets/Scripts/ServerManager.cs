@@ -3,34 +3,48 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections.Generic;
 
 public class ServerManager : MonoBehaviourPunCallbacks
 {
-    public TMP_InputField roomNameInput;      // Поле ввода для имени комнаты
-    public TMP_InputField maxPlayersInput;    // Поле ввода для максимального количества игроков
+    public TMP_InputField roomNameInput;    // Поле ввода для имени комнаты
+    public TMP_InputField maxPlayersInput;  // Поле ввода для максимального количества игроков
+    public ServerListUI serverListUI;       // Ссылка на скрипт ServerListUI
+
+    public GameObject _createMenu;
+    public GameObject _serverList;
 
     void Start()
     {
-        // Попытка подключиться к Photon при запуске сцены
         ConnectToPhoton();
+    }
+
+    public void LookServerList()
+    {
+        _createMenu.SetActive(false);
+        _serverList.SetActive(true);
+    }
+
+    public void LookCreateServer()
+    {
+        _createMenu.SetActive(true);
+        _serverList.SetActive(false);
     }
 
     void ConnectToPhoton()
     {
-        // Проверка, чтобы не подключаться дважды, если уже есть соединение
         if (!PhotonNetwork.IsConnected)
         {
-            PhotonNetwork.ConnectUsingSettings();   // Подключение к Photon с настройками проекта
+            PhotonNetwork.ConnectUsingSettings();
             Debug.Log("Попытка подключения к Photon серверу...");
         }
     }
 
     public void ConnectToRandomRoom()
     {
-        // Проверка, подключен ли игрок к серверу и находится ли в лобби
         if (PhotonNetwork.IsConnectedAndReady && PhotonNetwork.InLobby)
         {
-            PhotonNetwork.JoinRandomRoom();   // Подключение к случайной комнате
+            PhotonNetwork.JoinRandomRoom();
         }
         else
         {
@@ -40,74 +54,84 @@ public class ServerManager : MonoBehaviourPunCallbacks
 
     public void ConnectToNamedRoom()
     {
-        // Проверка, готово ли соединение и находится ли игрок в лобби
         if (!PhotonNetwork.IsConnectedAndReady || !PhotonNetwork.InLobby)
         {
             Debug.Log("Ожидание подключения к Master Server...");
-            return;  // Выход из метода, если соединение еще не установлено
+            return;
         }
 
-        // Получение имени комнаты из поля ввода
         string roomName = roomNameInput.text;
-        // Установка максимального количества игроков для комнаты
         byte maxPlayers = GetMaxPlayers();
 
         if (!string.IsNullOrEmpty(roomName))
         {
-            // Создание комнаты или подключение к существующей комнате с заданным именем
             RoomOptions roomOptions = new RoomOptions { MaxPlayers = maxPlayers };
             PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);
             Debug.Log("Создание или подключение к комнате с именем: " + roomName);
         }
         else
         {
-            Debug.LogWarning("Пожалуйста, введите имя комнаты.");  // Предупреждение, если имя комнаты не введено
+            Debug.LogWarning("Пожалуйста, введите имя комнаты.");
         }
     }
 
     private byte GetMaxPlayers()
     {
-        byte maxPlayers = 4;  // Значение по умолчанию - 4 игрока
-        // Попытка преобразовать значение из поля ввода в byte и ограничить диапазон от 2 до 10
+        byte maxPlayers = 4;
         if (byte.TryParse(maxPlayersInput.text, out byte result))
         {
-            maxPlayers = (byte)Mathf.Clamp(result, 2, 10);  // Ограничиваем от 2 до 10 игроков
+            maxPlayers = (byte)Mathf.Clamp(result, 2, 10);
         }
         return maxPlayers;
     }
 
     public void ReturnToMainMenu()
     {
-        PhotonNetwork.LeaveRoom();  // Отключение от текущей комнаты, если она существует
-        SceneManager.LoadScene("lvl_2");  // Загрузка сцены главного меню (lvl_2)
+        PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene("lvl_2");
     }
 
     public override void OnConnectedToMaster()
     {
-        Debug.Log("Подключение к Master Server.");  // Подтверждение успешного подключения
-        PhotonNetwork.JoinLobby();   // Подключение к лобби после подключения к Master Server
+        Debug.Log("Подключение к Master Server.");
+        PhotonNetwork.JoinLobby();
     }
 
     public override void OnJoinedLobby()
     {
-        Debug.Log("Подключение к лобби.");  // Подтверждение успешного подключения к лобби
+        Debug.Log("Подключение к лобби.");
+    }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        List<ServerData> serverDataList = new List<ServerData>();
+
+        foreach (RoomInfo room in roomList)
+        {
+            if (room.PlayerCount > 0)  // Показать только активные комнаты
+            {
+                serverDataList.Add(new ServerData(room.Name, room.PlayerCount, room.MaxPlayers));
+            }
+        }
+
+        serverListUI.UpdateServerList(serverDataList);  // Обновление UI списка серверов
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        Debug.LogError("Ошибка подключения к случайной комнате.");  // Лог ошибки, если не удалось присоединиться к случайной комнате
-        byte maxPlayers = GetMaxPlayers();  // Получение максимального количества игроков для новой комнаты
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayers });  // Создание новой комнаты
+        Debug.LogError("Ошибка подключения к случайной комнате.");
+        byte maxPlayers = GetMaxPlayers();
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = maxPlayers });
     }
 
     public override void OnJoinedRoom()
     {
-        Debug.Log("Успешное подключение к комнате: " + PhotonNetwork.CurrentRoom.Name);  // Успешное подключение к комнате
-        SceneManager.LoadScene("lvl_1");  // Переход на игровую сцену (lvl_1) после подключения
+        Debug.Log("Успешное подключение к комнате: " + PhotonNetwork.CurrentRoom.Name);
+        SceneManager.LoadScene("lvl_1");
     }
 
     public override void OnLeftRoom()
     {
-        Debug.Log("Покинул комнату.");  // Лог при успешном выходе из комнаты
+        Debug.Log("Покинул комнату.");
     }
 }
