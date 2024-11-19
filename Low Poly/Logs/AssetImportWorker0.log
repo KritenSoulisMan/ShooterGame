@@ -15,7 +15,7 @@ C:/Users/seqjo/Desktop/GitHub-repos/ShooterGame/Low Poly
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59618
+54248
 Successfully changed project path to: C:/Users/seqjo/Desktop/GitHub-repos/ShooterGame/Low Poly
 C:/Users/seqjo/Desktop/GitHub-repos/ShooterGame/Low Poly
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,14 +49,14 @@ C:/Users/seqjo/Desktop/GitHub-repos/ShooterGame/Low Poly
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [17228]  Target information:
+Player connection [21908]  Target information:
 
-Player connection [17228]  * "[IP] 192.168.1.47 [Port] 0 [Flags] 2 [Guid] 330552560 [EditorId] 330552560 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-K7JTEIG) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [21908]  * "[IP] 192.168.1.47 [Port] 0 [Flags] 2 [Guid] 668051346 [EditorId] 668051346 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-K7JTEIG) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [17228] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [17228] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [21908] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [21908] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 10.18 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 9.02 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.43f1 (85497d293fa1)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Resources/UnitySubsystems
@@ -67,49 +67,49 @@ Direct3D:
     Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
     Vendor:   NVIDIA
     VRAM:     8067 MB
-    Driver:   32.0.15.6603
+    Driver:   32.0.15.6614
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56904
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002931 seconds.
-- Loaded All Assemblies, in  0.244 seconds
+Registered in 0.004110 seconds.
+- Loaded All Assemblies, in  0.319 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.211 seconds
-Domain Reload Profiling: 455ms
-	BeginReloadAssembly (74ms)
+- Finished resetting the current domain, in  0.721 seconds
+Domain Reload Profiling: 1040ms
+	BeginReloadAssembly (101ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (24ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (39ms)
-	LoadAllAssembliesAndSetupDomain (100ms)
-		LoadAssemblies (74ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (125ms)
+		LoadAssemblies (101ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (98ms)
-			TypeCache.Refresh (97ms)
-				TypeCache.ScanAssembly (89ms)
+		AnalyzeDomain (123ms)
+			TypeCache.Refresh (121ms)
+				TypeCache.ScanAssembly (110ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (211ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (722ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (176ms)
+		SetupLoadedEditorAssemblies (670ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
-			SetLoadedEditorAssemblies (7ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (8ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (125ms)
-			ProcessInitializeOnLoadMethodAttributes (35ms)
+			ProcessInitializeOnLoadAttributes (474ms)
+			ProcessInitializeOnLoadMethodAttributes (175ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -120,138 +120,193 @@ Caller must complete domain reload
 Begin MonoManager ReloadAssembly
 Failed loading assembly 'Assets/Plugins/System.Windows.Forms.dll' reason: File does not contain a valid CIL image
 Loading assembly failed: "Assets/Plugins/System.Windows.Forms.dll" reason: File does not contain a valid CIL image
-- Loaded All Assemblies, in  0.535 seconds
+- Loaded All Assemblies, in  1.039 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.618 seconds
-Domain Reload Profiling: 1153ms
-	BeginReloadAssembly (111ms)
+- Finished resetting the current domain, in  0.974 seconds
+Domain Reload Profiling: 2013ms
+	BeginReloadAssembly (172ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (18ms)
-	RebuildCommonClasses (24ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (361ms)
-		LoadAssemblies (248ms)
+		CreateAndSetChildDomain (23ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (758ms)
+		LoadAssemblies (543ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (176ms)
-			TypeCache.Refresh (145ms)
-				TypeCache.ScanAssembly (131ms)
-			ScanForSourceGeneratedMonoScriptInfo (20ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (619ms)
+		AnalyzeDomain (317ms)
+			TypeCache.Refresh (273ms)
+				TypeCache.ScanAssembly (258ms)
+			ScanForSourceGeneratedMonoScriptInfo (27ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (975ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (498ms)
+		SetupLoadedEditorAssemblies (779ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (93ms)
-			ProcessInitializeOnLoadAttributes (341ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			BeforeProcessingInitializeOnLoad (128ms)
+			ProcessInitializeOnLoadAttributes (545ms)
+			ProcessInitializeOnLoadMethodAttributes (90ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 2.11 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 6.12 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5295 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 33 unused Assets / (0.8 MB). Loaded Objects now: 5756.
-Memory consumption went from 198.7 MB to 197.9 MB.
-Total: 2.871500 ms (FindLiveObjects: 0.333900 ms CreateObjectMapping: 0.138100 ms MarkObjects: 2.104100 ms  DeleteObjects: 0.294800 ms)
+Memory consumption went from 198.5 MB to 197.7 MB.
+Total: 18.385500 ms (FindLiveObjects: 0.917300 ms CreateObjectMapping: 6.489600 ms MarkObjects: 10.555800 ms  DeleteObjects: 0.421300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/PlayerUI.cs: 4d64fa5e9e8828968d6cc191a132718d -> aa4d01e81cb784f03c286f5345b125b4
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/EventSystemSpawner.cs: f408a55e814f245f8bc8085441fbe94b -> c525f40330ddc66d7e7f5297346da241
+  custom:scripting/monoscript/fileName/TextToggleIsOnTransition.cs: 3e45da2cb510baa5765664ee499455b7 -> 326b9c727c304dd69fe51444f64a7721
   custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/TextButtonTransition.cs: 72621123551f8416d26a631e33786da7 -> 72f2c4484a6dc921aacef6b387422aa7
+  custom:scripting/monoscript/fileName/CameraController.cs: 90f26c7c63924735c23c826b8a781463 -> 1daac0040b3fce2177f6ca4f90eb8c5b
+  custom:scripting/monoscript/fileName/OnStartDelete.cs: 020107d689eae9ab4a37b46ac589b3dd -> ca7ff388213f651af9d8be5d8844a8f4
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/Bullet.cs: 77c411c50d821352e611a16c30f40226 -> 402ddfbff962d13d0d802866838b0e76
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 49859.858564 seconds.
-  path: Assets/Plugins/System.Windows.Forms.dll
-  artifactKey: Guid(448a49c3700af8341858e447b0805c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/System.Windows.Forms.dll using Guid(448a49c3700af8341858e447b0805c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '5455a3863c506774a17b23f602536329') in 0.002298 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 40.061956 seconds.
-  path: Assets/Plugins/System.Windows.Forms.dll
-  artifactKey: Guid(448a49c3700af8341858e447b0805c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/System.Windows.Forms.dll using Guid(448a49c3700af8341858e447b0805c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '2136e83ae27b584a502fe4101eb1ea0f') in 0.000426 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+  custom:scripting/monoscript/fileName/ChannelSelector.cs:  -> 787aa32b539868663942ded37c6d24ef
+  custom:scripting/monoscript/fileName/MainMenu.cs:  -> c093076ba5753d7bec74a8a751ffb653
+  custom:scripting/monoscript/fileName/ChatAppIdCheckerUI.cs:  -> 1bb8fafd3e2c10dfddf187c423c0f4b8
+  custom:scripting/monoscript/fileName/SkewTextExample.cs:  -> c142d02d70a129e0533975f7c2f96956
+  custom:scripting/monoscript/fileName/ServerManager.cs:  -> 477b443ffd591b9b80b29fb7f48e8918
+  custom:scripting/monoscript/fileName/TMP_TextEventHandler.cs:  -> f5cd9d5a43bfefc8f4fec80e6de896a4
+  custom:scripting/monoscript/fileName/PlayerProfile.cs:  -> b81a06879d3499550ec5954119a5f387
+  custom:scripting/monoscript/fileName/TextMeshProFloatingText.cs:  -> 92608fa4a6315cd0786d82205e77b697
+  custom:scripting/monoscript/fileName/SaveManager.cs:  -> 237892e19e092729c0067a04d3385815
+  custom:scripting/monoscript/fileName/PlayerUIDM.cs:  -> 59325b5779e8dcb9d40e8bce2c3ba7ef
+  custom:scripting/monoscript/fileName/VertexZoom.cs:  -> 650ab1e81d40126e3edcf737cce646e4
+  custom:scripting/monoscript/fileName/IgnoreUiRaycastWhenInactive.cs:  -> 64ae0ba0567ac5043ee479695fe7bd2b
+  custom:scripting/monoscript/fileName/VertexShakeA.cs:  -> 63ec564c588058369499638dd899e05b
+  custom:scripting/monoscript/fileName/TMP_ExampleScript_01.cs:  -> a9d4be556104ff54e7d240529b3e01dc
+  custom:scripting/monoscript/fileName/TMP_TextEventCheck.cs:  -> 13505d917eab5868c435e0c2986dadfa
+  custom:scripting/monoscript/fileName/PlayerNicknameDisplay.cs:  -> 31e6c0327239ae8c42d90d852425b0fc
+  custom:scripting/monoscript/fileName/NamePickGui.cs:  -> 2c5392a37dc177dc65a116f98af1080e
+  custom:scripting/monoscript/fileName/TMP_TextSelector_B.cs:  -> ba2be21a7486d37b1011342977a2e49d
+  custom:scripting/monoscript/fileName/Benchmark01.cs:  -> 2d3e2cd961730ab95f139a49a673bace
+  custom:scripting/monoscript/fileName/BlueTeam.cs:  -> 675636991c9d4bca5c5bdb7d61f47de9
+  custom:scripting/monoscript/fileName/Gun.cs:  -> 7d05faef1ad0b187da47b70860e6ba9a
+  custom:scripting/monoscript/fileName/Benchmark02.cs:  -> 5640963252ce70910e726415f869ced6
+  custom:scripting/monoscript/fileName/DropdownSample.cs:  -> 0a92251794e5f10400149f96c3c59e5d
+  custom:scripting/monoscript/fileName/ConnectAndJoinRandomLb.cs:  -> 9dd47be72f766f78cbbffce9f8575ef1
+  custom:scripting/monoscript/fileName/NicknameManager.cs:  -> 9dafe8bd754402448ae83a50d6a32b2f
+  custom:scripting/monoscript/fileName/WarpTextExample.cs:  -> 2663459c266363641981c7d17b698d7f
+  custom:scripting/monoscript/fileName/LoadingScreen.cs:  -> 173b88dadcdb584ec0fc98103b67ec49
+  custom:scripting/monoscript/fileName/ChatController.cs:  -> 876d5ccae6e345dd5d9450eb0a748f16
+  custom:scripting/monoscript/fileName/TextMeshSpawner.cs:  -> 76f28e2ddb031571e6ec62b018f65fa8
+  custom:scripting/monoscript/fileName/TeamSelectionUI.cs:  -> 773aef6c07f74c1836dd15b85f6fa752
+  custom:scripting/monoscript/fileName/TeleType.cs:  -> 31fa97821c4c70f157ec81d507aa6b62
+  custom:scripting/monoscript/fileName/Health.cs:  -> 0e01c5d611b7e6f68d551fd8377c081b
+  custom:scripting/monoscript/fileName/AvatarLoader.cs:  -> efea8fc3f785d44ecab0b56eda570966
+  custom:scripting/monoscript/fileName/Benchmark04.cs:  -> 32220b148620e52aa81c13a114862bf4
+  custom:scripting/monoscript/fileName/SettingsManager.cs:  -> b62464c588252c0ba89fe557571949ed
+  custom:scripting/monoscript/fileName/TeamManager.cs:  -> dda82eb3d94f2335ceca503d9b66269f
+  custom:scripting/monoscript/fileName/ServerItem.cs:  -> 4ba4693f222f734087bba9211ca3c52c
+  custom:scripting/monoscript/fileName/NetworkManager.cs:  -> e4fa93220985ebf211f3da91d4ced24a
+  custom:scripting/monoscript/fileName/TMP_PhoneNumberValidator.cs:  -> 7c3049f481e464c6a9a15dee56c3126f
+  custom:scripting/monoscript/fileName/EnvMapAnimator.cs:  -> 1b4f61c17e4b7283c3ac351aacff9d26
+  custom:scripting/monoscript/fileName/ShaderPropAnimator.cs:  -> 55ce425812446482e623ff2695c94cb2
+  custom:scripting/monoscript/fileName/ChatGui.cs:  -> 83ccb577c346edd301c0a35e11693dfd
+  custom:scripting/monoscript/fileName/AppSettingsExtensions.cs:  -> 7eb3b190282e171c2845b1d8ee71ed5c
+  custom:scripting/monoscript/fileName/SimpleScript.cs:  -> 454caab0c6c050f29b39d82e1d66d0fa
+  custom:scripting/monoscript/fileName/ObjectSpin.cs:  -> 2b96bb2079dd7fa5108d981627a28e1e
+  custom:scripting/monoscript/fileName/WeaponSwitching.cs:  -> ac5d2a59c9f82269b21ca7ffec2b7d06
+  custom:scripting/monoscript/fileName/TMP_TextInfoDebugTool.cs:  -> 3f1709cfb2cc628169113a35b5e9be3f
+  custom:scripting/monoscript/fileName/MouseLook.cs:  -> 02bafd22af827e561c2131ae88bbd075
+  custom:scripting/monoscript/fileName/RoomData.cs:  -> 2b9b9874a672f985ecca03a0ac0fe8b3
+  custom:scripting/monoscript/fileName/TMP_TextSelector_A.cs:  -> 347309a09d56e367b188a6978f75b424
+  custom:scripting/monoscript/fileName/VertexJitter.cs:  -> d27eb5498e48714a66aece98da065133
+  custom:scripting/monoscript/fileName/TextConsoleSimulator.cs:  -> 33fc311abb20b5b0ed8f00e4d86b574e
+  custom:scripting/monoscript/fileName/VertexColorCycler.cs:  -> 5f984ca91cf3609293aecc6bc5641572
+  custom:scripting/monoscript/fileName/TMP_FrameRateCounter.cs:  -> 46f655df8cb483ac5958307137b1585a
+  custom:scripting/monoscript/fileName/VertexShakeB.cs:  -> a6f78c4fcda1a29a1a1c1baefedba9e7
+  custom:scripting/monoscript/fileName/TMP_UiFrameRateCounter.cs:  -> b01021aea19247f14a98ab338907956a
+  custom:scripting/monoscript/fileName/TMPro_InstructionOverlay.cs:  -> b626d2270e6ebd5c4311585c18b58d8d
+  custom:scripting/monoscript/fileName/TMP_DigitValidator.cs:  -> ac02af96215ae3951a3cce9e1a8c6085
+  custom:scripting/monoscript/fileName/PlayerMovement.cs:  -> 42480eed24e61f9d7e7e895933644f96
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp-Editor:  -> bae848875a35fe96f09fcc9f4e534600
+  custom:scripting/monoscript/fileName/Benchmark01_UGUI.cs:  -> 6148cfe2627b7708298f301788144139
+  custom:scripting/monoscript/fileName/FriendItem.cs:  -> 7041a5cee458fd755b4167724bf865d2
+  custom:scripting/monoscript/fileName/ServerListUI.cs:  -> 700d9f29526826950bfec1f9c76d5efe
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp:  -> 71996fb636ca7d4ed7901de7157a3d82
+  custom:scripting/monoscript/fileName/RedTeam.cs:  -> 8d115e0b3f957950caa46cbe919ee7a7
+  custom:scripting/monoscript/fileName/Benchmark03.cs:  -> 17cc87e0529ac71d909a946afb47a274
 ========================================================================
 Received Prepare
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
 Failed loading assembly 'Assets/Plugins/System.Windows.Forms.dll' reason: File does not contain a valid CIL image
 Loading assembly failed: "Assets/Plugins/System.Windows.Forms.dll" reason: File does not contain a valid CIL image
-- Loaded All Assemblies, in  0.373 seconds
+- Loaded All Assemblies, in  0.459 seconds
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.835 seconds
-Domain Reload Profiling: 1207ms
-	BeginReloadAssembly (119ms)
+- Finished resetting the current domain, in  1.187 seconds
+Domain Reload Profiling: 1645ms
+	BeginReloadAssembly (154ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (35ms)
-	RebuildCommonClasses (22ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (19ms)
-	LoadAllAssembliesAndSetupDomain (204ms)
-		LoadAssemblies (242ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (23ms)
+	LoadAllAssembliesAndSetupDomain (242ms)
+		LoadAssemblies (302ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (16ms)
-			TypeCache.Refresh (4ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (6ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (835ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (1188ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (469ms)
+		SetupLoadedEditorAssemblies (700ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (93ms)
-			ProcessInitializeOnLoadAttributes (315ms)
-			ProcessInitializeOnLoadMethodAttributes (51ms)
-			AfterProcessingInitializeOnLoad (2ms)
+			BeforeProcessingInitializeOnLoad (166ms)
+			ProcessInitializeOnLoadAttributes (450ms)
+			ProcessInitializeOnLoadMethodAttributes (69ms)
+			AfterProcessingInitializeOnLoad (3ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 1.94 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.22 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5197 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 27 unused Assets / (0.7 MB). Loaded Objects now: 5760.
-Memory consumption went from 176.9 MB to 176.2 MB.
-Total: 2.660000 ms (FindLiveObjects: 0.317600 ms CreateObjectMapping: 0.136800 ms MarkObjects: 1.940200 ms  DeleteObjects: 0.264800 ms)
+Memory consumption went from 176.8 MB to 176.1 MB.
+Total: 3.613900 ms (FindLiveObjects: 0.403900 ms CreateObjectMapping: 0.423700 ms MarkObjects: 2.389900 ms  DeleteObjects: 0.395700 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -269,10 +324,116 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.815009 seconds.
+  Time since last request: 15102.303696 seconds.
   path: Assets/Plugins/System.Windows.Forms.dll
   artifactKey: Guid(448a49c3700af8341858e447b0805c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Plugins/System.Windows.Forms.dll using Guid(448a49c3700af8341858e447b0805c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '4e6e4706d8e432e196bb86dcdcd0eb44') in 0.005510 seconds
+ -> (artifact id: 'dfb67cc1383b5b27bfb54acc2b501766') in 0.002066 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 55.950178 seconds.
+  path: Assets/Scenes/Loading.unity
+  artifactKey: Guid(d6af216b74395c344b198051e84931e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Loading.unity using Guid(d6af216b74395c344b198051e84931e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2ede57fa66ba366646f5b62150b52581') in 0.000457 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 41.079667 seconds.
+  path: Assets/Scenes/Update_Menu.unity
+  artifactKey: Guid(617cb6849bfbbe94e98fb2b518eb2af8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Update_Menu.unity using Guid(617cb6849bfbbe94e98fb2b518eb2af8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '91e3992afefc77f4ef14d1c3ea00703b') in 0.000425 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 35.030546 seconds.
+  path: Assets/Resources/PlayerForDM.prefab
+  artifactKey: Guid(da0495789422b6d4a88683178c2a7e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PlayerForDM.prefab using Guid(da0495789422b6d4a88683178c2a7e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f15d5ea512ac332668108396b3ef6976') in 0.000444 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Resources/PlayerIsRedTeam.prefab
+  artifactKey: Guid(c6d988f29fc9da243b9e69d7075f6e12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PlayerIsRedTeam.prefab using Guid(c6d988f29fc9da243b9e69d7075f6e12) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '66f71752e200711f80e608758b2d4f60') in 0.000436 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 343.253672 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown Arrow.png
+  artifactKey: Guid(936345f7fc3934efa8119a8700d904c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Skin/DropDown Arrow.png using Guid(936345f7fc3934efa8119a8700d904c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ee2cc6ff0b64d0c38c4c2a9cce26a639') in 0.091184 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Photon/PhotonChat/Demos/DemoChat/Files/Gradient.png
+  artifactKey: Guid(2fb83ea89df639b43a22d707d3c22af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonChat/Demos/DemoChat/Files/Gradient.png using Guid(2fb83ea89df639b43a22d707d3c22af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5f17d04a38a9a8a376226927fa511125') in 0.015260 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/Gradient.png
+  artifactKey: Guid(66efb24ed46044ab8a039599cbc47d7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/Sprites/Gradient.png using Guid(66efb24ed46044ab8a039599cbc47d7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0098c650217a441f18ca063765b6d1c5') in 0.006868 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.849263 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIcon-128.png
+  artifactKey: Guid(bd293dc32f4aaf94e8274f2fac2cdf89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIcon-128.png using Guid(bd293dc32f4aaf94e8274f2fac2cdf89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ab73f3e6287e56e4021dca3bd9bda19b') in 0.017942 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.049211 seconds.
+  path: Assets/Photon/PhotonChat/Demos/DemoChat/Files/PunIcon-White-129.png
+  artifactKey: Guid(37b0a18b391c6ae468b5bcc74bba2c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonChat/Demos/DemoChat/Files/PunIcon-White-129.png using Guid(37b0a18b391c6ae468b5bcc74bba2c1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5d60652964f310f9462a2158c129af0d') in 0.009082 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.026427 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp48.png
+  artifactKey: Guid(44ebd8e6f42cae445ab4b22f0a9b48a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp48.png using Guid(44ebd8e6f42cae445ab4b22f0a9b48a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '83b9eb43cd339dc831ca4195eb38584a') in 0.008604 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.428912 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp512.png
+  artifactKey: Guid(7377013011b4c3348809ff574abe799e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp512.png using Guid(7377013011b4c3348809ff574abe799e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b23824d3e478783f6fadb24049112c40') in 0.010115 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3

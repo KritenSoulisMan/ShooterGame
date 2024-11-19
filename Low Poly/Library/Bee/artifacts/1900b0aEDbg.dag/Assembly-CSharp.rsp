@@ -126,6 +126,7 @@
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll"
 -r:"Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll"
+-r:"Assets/Plugins/System.Windows.Forms.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
